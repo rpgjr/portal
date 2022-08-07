@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+/* All */
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+footer {
+    margin-top: 200px;
+}
+
+
+/* index-css */
+.greetings {
+	background: url('../../img/pupBG2.jpg') no-repeat center center fixed;
+	background-size: cover;
+	height: 100%;
+	color: #ffffff;
+}
+
+.glassBG {
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+	background-color: rgba(255, 255, 255, .15);
+	backdrop-filter: blur(10px);
+	border-radius: 20px;
+	padding: 40px;
+}
+
+.container-greetings {
+    width: 1200px;
+}
+
+.form-section img, .career-section img, .donation-section img{
+    height: 300px;
+    border-radius: 10px;
+}
+
+.box-design {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.box-login {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 90px;
+    margin-bottom: 90px;
+    width: 500px;
+}
+
+.box-register {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 90px;
+    margin-bottom: 90px;
+    width: 1100px;
+}
+
+.feature-design{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    text-align: center;
+    width: 1100px;
+}
+
+.features {
+    margin-top: 100px;
+}
+
+.features div img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Login Page */
+.login-page {
+    width: 450px;
+    height: 200px;
+    position: relative;
+}
+
+
+.login-box {
+    margin-top: 200px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 10px;
+    padding: 30px;
+    /* Center vertically and horizontally */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.news {
+    width: 700px;
+}
+
