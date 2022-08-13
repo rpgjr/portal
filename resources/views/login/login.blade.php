@@ -12,6 +12,6 @@
     @if(Session::has('fail'))
         <div class="alert alert-danger">{{ Session::get('fail') }}</div>
     @endif
-    <button type="button" class="btn btn-danger">Administrator</button>
+    <a href="{{ route('admin.login') }}" type="button" class="btn btn-danger">Administrator</a>
 
 @endsection

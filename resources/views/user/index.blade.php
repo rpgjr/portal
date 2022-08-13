@@ -11,7 +11,8 @@
         <div class="row">
             <div class="col-md glassBG">
                 <center>
-                    <h1>Welcome to PUP Taguig Alumni Portal <b>{{$data->username}}</b></h1>
+                    <h1>Welcome to PUP Taguig Alumni Portal </h1>
+                    {{-- <b>{{$data->username}}</b> --}}
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </center>
             </div>
@@ -19,10 +20,10 @@
     </div>
 </section>
 
-<section class="news">
+<section class="news-section">
     <div class="container carousel-news">
-        <div class="row">
-            <div class="col-md-12">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-12 news">
                 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-bs-interval="2000">

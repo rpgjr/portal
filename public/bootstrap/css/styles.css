@@ -102,7 +102,15 @@ footer {
     transform: translate(-50%, -50%);
 }
 
+.news-section {
+    margin-top: 100px;
+}
+
 .news {
     width: 700px;
+}
+
+.news img {
+    border-radius: 15px;
 }
 

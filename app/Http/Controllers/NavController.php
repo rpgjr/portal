@@ -28,8 +28,4 @@ class NavController extends Controller
     public function login() {
         return view('login.login');
     }
-
-    public function career() {
-        return view('career.index');
-    }
 }
