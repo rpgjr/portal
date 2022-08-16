@@ -36,7 +36,8 @@
             <div class="col-md-12 d-flex justify-content-center mt-4 mb-2">
                 <button type="submit" class="btn btn-primary">Login as Admin</button>
             </div>
-            <div class="col-md-12 d-flex justify-content-center">
+            <div class="col-md-12 d-flex justify-content-center mt-3">
+                <p>Not an admin? <a href="{{ route('user.login') }}">Login as Alumni here!</a></p>
             </div>
         </div>
     </div>

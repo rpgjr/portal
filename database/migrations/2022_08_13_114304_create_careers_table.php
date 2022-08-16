@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('category');
             $table->string('email');
             $table->string('number');
+            $table->string('username');
+            $table->boolean('carRequest');
             $table->timestamps();
         });
     }

@@ -12,11 +12,6 @@ use Session;
 
 class AccountController extends Controller
 {
-    public function registerUser() {
-        $courses = Courses::all();
-        return view('login.register-user', compact('courses'));
-    }
-
     public function regUser(Request $request) {
         if(AlumniList::where('studNumber', '=', $request->studNumber)->first() && AlumniList::where('lastName', '=', $request->lastName)->first() && AlumniList::where('firstName', '=', $request->firstName)->first()) {
             $request->validate([

@@ -107,7 +107,7 @@
             <div class="col-md-12 d-flex justify-content-center mt-4 mb-2">
                 <button type="submit" class="btn btn-primary" style="width: 200px">Register</button>
             </div>
-            <div class="col-md-12 d-flex justify-content-center">
+            <div class="col-md-12 d-flex justify-content-center mt-3">
                 <p>Already have an account? <a href="{{ route('user.login') }}">Login here!</a></p>
             </div>
         </div>

@@ -36,8 +36,8 @@
             </ul>
             <div class="d-flex">
                 <div class="btn-group" role="group" aria-label="Basic example">
-                    <a href="{{ route('login') }}" type="button" class="btn btn-primary" style="width: 150px">Login <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
-                    <a href="{{ route('registration') }}" type="button" class="btn btn-success" style="width: 150px">Register <i class="fa-solid fa-user-plus"></i></a>
+                    <a href="{{ route('login') }}" type="button" class="btn btn-primary" style="width: 120px">Login <i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+                    <a href="{{ route('registration') }}" type="button" class="btn btn-success" style="width: 120px">Register <i class="fa-solid fa-user-plus"></i></a>
                 </div>
 
             </div>
@@ -49,11 +49,16 @@
 
     @yield('content')
 
-{{-- Footer --}}
+
 
 
 
     {{-- JS --}}
     <script src="{{ asset('bootstrap/js/bootstrap.bundle.js') }}"></script>
+
+    {{-- Footer --}}
+    <footer class="homepage-footer">
+        <center>PUPT Alumni Portal System - [All4One]</center>
+    </footer>
 </body>
 </html>

@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Careers;
 use Illuminate\Http\Request;
+use DB;
 
 class CareerController extends Controller
 {
     public function index() {
-        $career = Careers::all();
-        return view('career.index', compact('career'));
+        $data = Session()->get('loginID');
+        $career = DB::table('careers')->where('carRequest', '=', 1)->get();
+        return view('career.index', compact('career', 'data'));
     }
 
     public function addJob(Request $request) {
@@ -21,6 +23,8 @@ class CareerController extends Controller
             'category' => 'required',
             'email' => 'required',
             'number' => 'required',
+            'username' => 'required',
+            'carRequest' => 'required',
         ]);
 
         $career = new Careers();
@@ -31,10 +35,15 @@ class CareerController extends Controller
         $career->category = $request->input('category');
         $career->email = $request->input('email');
         $career->number = $request->input('number');
-        $result = $career->save();
+        $career->username = $request->input('username');
+        $career->carRequest = $request->input('carRequest');
+        $career->save();
 
-        if($result) {
-            return redirect(route('career.index'));
+        if(Session()->get('loginID')) {
+            return back()->with('success', 'Wait for the admin to Approve your Job Posting. Thank you.');
+        }
+        elseif(Session()->get('loginAdminID')) {
+            return redirect(route('admin.careerIndex'));
         }
         else {
             echo "Error";
@@ -46,13 +55,31 @@ class CareerController extends Controller
         $input = $request->all();
         $career->fill($input)->save();
 
-        return redirect(route('career.index'));
+        if(Session()->get('loginID')) {
+            return redirect(route('career.index'));
+        }
+        elseif(Session()->get('loginAdminID')) {
+            return redirect(route('admin.careerIndex'));
+        }
     }
 
     public function delete($id) {
         $career = Careers::find($id);
         $career->delete();
 
-        return redirect(route('career.index'));
+        if(Session()->get('loginID')) {
+            return redirect(route('career.index'));
+        }
+        elseif(Session()->get('loginAdminID')) {
+            return redirect(route('admin.careerIndex'));
+        }
+    }
+
+    public function approveCareer($id) {
+        $career = Careers::find($id);
+        $career->carRequest = 1;
+        $career->save();
+
+        return redirect(route('admin.careerRequest'));
     }
 }

@@ -19,5 +19,7 @@ class Careers extends Model
         'category',
         'email',
         'number',
+        'username',
+        'carRequest',
     ];
 }

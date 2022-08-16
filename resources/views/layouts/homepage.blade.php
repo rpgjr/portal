@@ -31,7 +31,7 @@
                     <a class="nav-link @yield('career-active')" aria-current="page" href="{{ route('career.index') }}">Careers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link @yield('donation-active')" aria-current="page" href="#donation">Donations</a>
+                    <a class="nav-link @yield('donation-active')" aria-current="page" href="#donation">Tracer</a>
                 </li>
             </ul>
             <div class="d-flex">
@@ -58,5 +58,9 @@
 
     {{-- JS --}}
     <script src="{{ asset('bootstrap/js/bootstrap.bundle.js') }}"></script>
+
+    <footer class="homepage-footer">
+        <center>PUPT Alumni Portal System - [All4One]</center>
+    </footer>
 </body>
 </html>

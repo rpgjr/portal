@@ -7,6 +7,8 @@ use App\Imports\UsersImport;
 use App\Models\Admin;
 use Excel;
 use App\Models\AlumniList;
+use App\Models\Careers;
+use DB;
 
 class AdminController extends Controller
 {
@@ -30,5 +32,24 @@ class AdminController extends Controller
 
         Excel::import(new UsersImport, $request->file('excel_file'));
         return redirect()->back();
+    }
+
+    public function adminCareer() {
+        $data = Session()->get('loginID');
+        $career = Careers::all();
+        return view('admin-career.index', compact('career', 'data'));
+    }
+
+    public function deleteAlumniList($studNumber) {
+        $alumni = AlumniList::where('studNumber', '=', $studNumber);
+        $alumni->delete();
+
+        return redirect(route('admin.addList'));
+    }
+
+    public function careerRequest() {
+        $data = Session()->get('loginID');
+        $career = DB::table('careers')->where('carRequest', '=', 0)->get();
+        return view('admin-career.request', compact('career', 'data'));
     }
 }

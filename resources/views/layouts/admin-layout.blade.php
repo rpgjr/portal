@@ -50,7 +50,7 @@
             <div class="col-md-3">
 
                 <div class="box-sidebar">
-                    {{-- User-Management --}}
+                {{-- User-Management --}}
                     <a class="nav-link px-3 @yield('user-status')" data-bs-toggle="collapse" href="#user-management">
                         <i class="fa-solid fa-user-gear"></i>
                         <span>User Management</span>
@@ -96,10 +96,10 @@
                             </li>
                         </ul>
                     </div>
-                    {{-- Reports --}}
+                {{-- Reports --}}
                     <hr>
                     <a class="nav-link px-3 @yield('reports-status')" data-bs-toggle="collapse" href="#reports">
-                        <i class="fa-solid fa-user-gear"></i>
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
                         <span>Reports</span>
                         <span class="ms-auto">
                             <span class="right-icon">
@@ -112,7 +112,7 @@
                             <li>
                                 <a href="" class="nav-link px-3 @yield('')">
                                     <span class="me-2">
-                                        <i class="fa-solid fa-address-book"></i>
+                                        <i class="fa-solid fa-clipboard-user"></i>
                                     </span>
                                     <span>User Reports</span>
                                 </a>
@@ -120,7 +120,7 @@
                             <li>
                                 <a href="" class="nav-link px-3 @yield('')">
                                     <span class="me-2">
-                                        <i class="fa-solid fa-address-book"></i>
+                                        <i class="fa-solid fa-user-graduate"></i>
                                     </span>
                                     <span>Alumni Reports</span>
                                 </a>
@@ -128,7 +128,7 @@
                             <li>
                                 <a href="" class="nav-link px-3 @yield('')">
                                     <span class="me-2">
-                                        <i class="fa-solid fa-address-book"></i>
+                                        <i class="fa-solid fa-chart-pie"></i>
                                     </span>
                                     <span>Form Reports</span>
                                 </a>
@@ -136,10 +136,10 @@
 
                         </ul>
                     </div>
-                    {{-- Forms --}}
+                {{-- Forms --}}
                     <hr>
                     <a class="nav-link px-3 @yield('forms-status')" data-bs-toggle="collapse" href="#forms">
-                        <i class="fa-solid fa-user-gear"></i>
+                        <i class="fa-solid fa-file-lines"></i>
                         <span>Forms</span>
                         <span class="ms-auto">
                             <span class="right-icon">
@@ -152,7 +152,7 @@
                             <li>
                                 <a href="" class="nav-link px-3 @yield('')">
                                     <span class="me-2">
-                                        <i class="fa-solid fa-address-book"></i>
+                                        <i class="fa-solid fa-file-pen"></i>
                                     </span>
                                     <span>Update Forms</span>
                                 </a>
@@ -160,17 +160,17 @@
                             <li>
                                 <a href="" class="nav-link px-3 @yield('')">
                                     <span class="me-2">
-                                        <i class="fa-solid fa-address-book"></i>
+                                        <i class="fa-solid fa-file-circle-plus"></i>
                                     </span>
                                     <span>Add New Form</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
-                    {{-- Career --}}
+                {{-- Career --}}
                     <hr>
                     <a class="nav-link px-3 @yield('careers-status')" data-bs-toggle="collapse" href="#careers">
-                        <i class="fa-solid fa-user-gear"></i>
+                        <i class="fa-solid fa-user-tie"></i>
                         <span>Careers</span>
                         <span class="ms-auto">
                             <span class="right-icon">
@@ -181,35 +181,36 @@
                     <div class="collapse @yield('careers-collapse')" id="careers">
                         <ul class="navbar-nav ps-3">
                             <li>
-                                <a href="" class="nav-link px-3 @yield('')">
+                                <a href="{{ route('admin.careerIndex') }}" class="nav-link px-3 @yield('manage-career-status')">
                                     <span class="me-2">
-                                        <i class="fa-solid fa-address-book"></i>
+                                        <i class="fa-solid fa-pencil"></i>
                                     </span>
                                     <span>Manage Careers</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="" class="nav-link px-3 @yield('')">
+                                @include('career.add-modal')
+                                <a class="nav-link px-3 @yield('')" data-bs-toggle="modal" data-bs-target="#addCareer">
                                     <span class="me-2">
-                                        <i class="fa-solid fa-address-book"></i>
+                                        <i class="fa-solid fa-circle-plus"></i>
                                     </span>
                                     <span>Add Job Advertisement</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="" class="nav-link px-3 @yield('')">
+                                <a href="{{ route('admin.careerRequest') }}" class="nav-link px-3 @yield('admin.careerRequest')">
                                     <span class="me-2">
-                                        <i class="fa-solid fa-address-book"></i>
+                                        <i class="fa-solid fa-check"></i>
                                     </span>
                                     <span>Career Requests</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
-                    {{-- News and Events --}}
+                {{-- News and Events --}}
                     <hr>
                     <a class="nav-link px-3 @yield('forms-status')" data-bs-toggle="collapse" href="#news">
-                        <i class="fa-solid fa-user-gear"></i>
+                        <i class="fa-solid fa-newspaper"></i>
                         <span>News and Events</span>
                         <span class="ms-auto">
                             <span class="right-icon">
@@ -222,7 +223,7 @@
                             <li>
                                 <a href="" class="nav-link px-3 @yield('')">
                                     <span class="me-2">
-                                        <i class="fa-solid fa-address-book"></i>
+                                        <i class="fa-solid fa-pen-to-square"></i>
                                     </span>
                                     <span>Update News and Events</span>
                                 </a>
@@ -230,14 +231,13 @@
                             <li>
                                 <a href="" class="nav-link px-3 @yield('')">
                                     <span class="me-2">
-                                        <i class="fa-solid fa-address-book"></i>
+                                        <i class="fa-solid fa-square-plus"></i>
                                     </span>
                                     <span>Add News and Events</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
-
 
                 </div>
             </div>

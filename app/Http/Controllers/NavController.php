@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Courses;
 use App\Models\UserAccounts;
 use Session;
 
@@ -14,7 +15,8 @@ class NavController extends Controller
     }
 
     public function register() {
-        return view('login.register');
+        $courses = Courses::all();
+        return view('login.register-user', compact('courses'));
     }
 
     public function index() {
@@ -26,6 +28,6 @@ class NavController extends Controller
     }
 
     public function login() {
-        return view('login.login');
+        return view('login.login-user');
     }
 }
