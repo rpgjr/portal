@@ -31,7 +31,7 @@
                     <a class="nav-link @yield('career-active')" aria-current="page" href="{{ route('career.index') }}">Careers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link @yield('tracer-active')" aria-current="page" href="{{ route('user.tracerIndex') }}">Tracer</a>
+                    <a class="nav-link @yield('tracer-active')" aria-current="page" href="">Tracer</a>
                 </li>
             </ul>
             <div class="d-flex">

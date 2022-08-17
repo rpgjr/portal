@@ -54,9 +54,4 @@ class AdminController extends Controller
         return view('admin-career.request', compact('career', 'data'));
     }
 
-    // Alumni Tracer return view only
-    public function adminTracer() {
-        $tracer = Tracers::all();
-        return view('admin-tracer.index', compact('tracer'));
-    }
 }

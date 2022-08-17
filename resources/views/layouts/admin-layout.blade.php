@@ -136,60 +136,7 @@
 
                         </ul>
                     </div>
-                {{-- Forms --}}
-                    <hr>
-                    <a class="nav-link px-3 @yield('forms-status')" data-bs-toggle="collapse" href="#forms">
-                        <i class="fa-solid fa-file-lines"></i>
-                        <span>Forms</span>
-                        <span class="ms-auto">
-                            <span class="right-icon">
-                                <i class="fa-solid fa-caret-down"></i>
-                            </span>
-                        </span>
-                    </a>
-                    <div class="collapse @yield('forms-collapse')" id="forms">
-                        <ul class="navbar-nav ps-3">
-                            <li>
-                                <a href="" class="nav-link px-3 @yield('')">
-                                    <span class="me-2">
-                                        <i class="fa-solid fa-file-pen"></i>
-                                    </span>
-                                    <span>Update Forms</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="nav-link px-3 @yield('')">
-                                    <span class="me-2">
-                                        <i class="fa-solid fa-file-circle-plus"></i>
-                                    </span>
-                                    <span>Add New Form</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                {{-- Tracer --}}
-                <hr>
-                <a class="nav-link px-3 @yield('tracer-status')" data-bs-toggle="collapse" href="#tracer">
-                    <i class="fa-solid fa-file-lines"></i>
-                    <span>Tracer</span>
-                    <span class="ms-auto">
-                        <span class="right-icon">
-                            <i class="fa-solid fa-caret-down"></i>
-                        </span>
-                    </span>
-                </a>
-                <div class="collapse @yield('tracer-collapse')" id="tracer">
-                    <ul class="navbar-nav ps-3">
-                        <li>
-                            <a href="{{ route('admin.Tracer') }}" class="nav-link px-3 @yield('update-tracer-status')">
-                                <span class="me-2">
-                                    <i class="fa-solid fa-file-pen"></i>
-                                </span>
-                                <span>Update Tracer</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+
                 {{-- Career --}}
                     <hr>
                     <a class="nav-link px-3 @yield('careers-status')" data-bs-toggle="collapse" href="#careers">
@@ -267,7 +214,6 @@
 
             <div class="col-md-9">
                 @yield('content')
-                @include('admin-tracer.action')
             </div>
         </div>
     </div>
