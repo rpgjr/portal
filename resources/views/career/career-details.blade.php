@@ -3,7 +3,7 @@
     <div class="col-md-12">
         <div class="col-md-8">
             <div style="min-height: 120px;">
-                <div class="collapse collapse-horizontal" id="career{{$job->id}}">
+                <div class="collapse collapse-horizontal" id="career{{$job->careerID}}">
                     <div class="card card-body">
 
                     <h4><b>Job Name: </b>{{ $job->job_name }}</h4>

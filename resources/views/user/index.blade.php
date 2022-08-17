@@ -20,7 +20,7 @@
     </div>
 </section>
 
-<section class="news-section">
+<section class="news-section mb-5">
     <div class="container">
         <div class="row align-items-center">
             <h2>News and Updates</h2>

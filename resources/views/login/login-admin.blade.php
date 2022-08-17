@@ -21,9 +21,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Admin ID</label>
-                    <input type="text" class="form-control" name="adminID"  value="{{old('adminID')}}">
-                    <span class="text-danger">@error('adminID') {{$message}} @enderror</span>
+                    <label for="exampleInputEmail1" class="form-label">Username</label>
+                    <input type="text" class="form-control" name="username"  value="{{old('username')}}">
+                    <span class="text-danger">@error('username') {{$message}} @enderror</span>
                 </div>
             </div>
             <div class="col-md-12">

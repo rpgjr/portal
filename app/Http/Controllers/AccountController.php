@@ -28,6 +28,7 @@ class AccountController extends Controller
                 'address' => 'required',
                 'username' => 'required|unique:user_accounts',
                 'password' => 'required|min:8',
+                'accessType' => 'required',
             ]);
 
             $account = new UserAccounts();
@@ -44,6 +45,7 @@ class AccountController extends Controller
             $account->address = $request->address;
             $account->username = $request->username;
             $account->password = Hash::make($request->password);
+            $account->accessType = $request->accessType;
             $result = $account->save();
 
             if($result) {
@@ -91,14 +93,14 @@ class AccountController extends Controller
 
     public function login_admin(Request $request) {
         $request->validate([
-            'adminID' => 'required',
+            'username' => 'required',
             'password' => 'required',
         ]);
 
-        $admin = Admin::where('adminID', '=', $request->adminID)->first();
+        $admin = Admin::where('username', '=', $request->username)->first();
         if($admin) {
             if($request->password) {
-                $request->session()->put('loginAdminID', $admin->adminID);
+                $request->session()->put('loginAdminID', $admin->username);
                 return redirect(route('admin.index'));
             }
             // if(Hash::check($request->password, $admin->password)) {

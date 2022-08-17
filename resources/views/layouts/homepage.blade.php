@@ -11,7 +11,7 @@
 <body>
 
 {{-- NavBar --}}
-    <nav class="navbar navbar-expand-lg bg-light sticky-top">
+    <nav class="nav-design navbar navbar-expand-lg bg-light sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="">
                 <img src="{{ asset('img/pupLogo.png') }}" style="height: 50px">
@@ -31,12 +31,12 @@
                     <a class="nav-link @yield('career-active')" aria-current="page" href="{{ route('career.index') }}">Careers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link @yield('donation-active')" aria-current="page" href="#donation">Tracer</a>
+                    <a class="nav-link @yield('tracer-active')" aria-current="page" href="{{ route('user.tracerIndex') }}">Tracer</a>
                 </li>
             </ul>
             <div class="d-flex">
                 <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="dropdown-toggle account-name" type="" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid fa-circle-user"></i>  {{ Session::get('loginID') }}
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">

@@ -34,15 +34,15 @@
                 <input type="text" class="form-control" placeholder="Middle Name" name="middleName" value="{{old('middleName')}}">
                 <span class="text-danger">@error('middleName') {{$message}} @enderror</span>
             </div>
-            <div class="col-md-8 my-2">
+            <div class="col-md-6 my-2">
                 <label for="inputState" class="form-label">Course</label>
                 <select class="form-select" name="courseID">
                     @foreach ($courses as $course)
-                        <option value="{{ $course->courseID }}">{{ $course->courseDesc }}</option>
+                        <option value="{{ $course->courseID }}">{{ $course->courseID }}</option>
                     @endforeach
                 </select>
             </div>
-            <div class="col-md-4 my-2">
+            <div class="col-md-6 my-2">
                 <label for="inputState" class="form-label">Batch</label>
                 <select class="form-select" name="batch">
                     @for ($i = date('Y'); $i >= 1996; $i--)
@@ -100,6 +100,7 @@
                 <label for="exampleInputEmail1" class="form-label">Confirm Password</label>
                 <input type="password" class="form-control" placeholder="********" name="confirmPassword">
                 <span class="text-danger">@error('password') {{$message}} @enderror</span>
+                <input type="hidden" name="accessType" value="alumni">
             </div>
         </div>
 

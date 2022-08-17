@@ -142,5 +142,23 @@ body {
     padding: 6px;
 }
 
+.account-name {
+    color: #000000;
+    padding: 8px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    background-color: #ffffff;
+    border-color: #78281F;
+    border-radius: 7px;
+}
+
+.account-name:hover {
+    color: #ffffff;
+    background-color: #78281F;
+    border-color: #ffffff;
+    transition: transform 500ms;
+    transform: translateX(-8px);
+}
+
+
 
 

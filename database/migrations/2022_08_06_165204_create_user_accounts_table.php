@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('address');
             $table->string('username');
             $table->string('password');
+            $table->string('accessType');
             $table->timestamps();
         });
     }

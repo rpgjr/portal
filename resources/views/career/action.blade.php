@@ -1,5 +1,5 @@
 {{-- Edit modal --}}
-<div class="modal fade" id="editModal{{ $job->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editModal{{ $job->careerID }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable" style="max-width: 50%">
       <div class="modal-content">
         <div class="modal-header">
@@ -7,7 +7,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
             <div class="modal-body">
-                {!! Form::model($job, [ 'method' => 'patch','route' => ['career.update', $job->id] ]) !!}
+                {!! Form::model($job, [ 'method' => 'patch','route' => ['career.update', $job->careerID] ]) !!}
                 @csrf
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Job Name</label>
@@ -52,14 +52,14 @@
 </div>
 
 {{-- Delete --}}
-<div class="modal fade" id="deleteModal{{ $job->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="deleteModal{{ $job->careerID }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Delete Job</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        {!! Form::model($job, [ 'method' => 'delete','route' => ['career.delete', $job->id] ]) !!}
+        {!! Form::model($job, [ 'method' => 'delete','route' => ['career.delete', $job->careerID] ]) !!}
         @csrf
             <div class="modal-body">
                 <div class="alert alert-danger" role="alert">
@@ -76,14 +76,14 @@
 </div>
 
 {{-- Approve --}}
-<div class="modal fade" id="approveModal{{ $job->id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="approveModal{{ $job->careerID }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Delete Job</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        {!! Form::model($job, [ 'method' => 'delete','route' => ['career.approve', $job->id] ]) !!}
+        {!! Form::model($job, [ 'method' => 'delete','route' => ['career.approve', $job->careerID] ]) !!}
         @csrf
             <div class="modal-body">
                 <div class="alert alert-primary" role="alert">

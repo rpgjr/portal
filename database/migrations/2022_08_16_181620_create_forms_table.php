@@ -13,12 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('admins', function (Blueprint $table) {
-            $table->increments('adminID');
-            $table->string('username');
-            $table->string('email');
-            $table->string('password');
-            $table->string('accessType');
+        Schema::create('forms', function (Blueprint $table) {
+            $table->increments('formID');
+            $table->string('formName');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admins');
+        Schema::dropIfExists('forms');
     }
 };

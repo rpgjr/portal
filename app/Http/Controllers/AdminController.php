@@ -8,6 +8,7 @@ use App\Models\Admin;
 use Excel;
 use App\Models\AlumniList;
 use App\Models\Careers;
+use App\Models\Tracers;
 use DB;
 
 class AdminController extends Controller
@@ -51,5 +52,11 @@ class AdminController extends Controller
         $data = Session()->get('loginID');
         $career = DB::table('careers')->where('carRequest', '=', 0)->get();
         return view('admin-career.request', compact('career', 'data'));
+    }
+
+    // Alumni Tracer return view only
+    public function adminTracer() {
+        $tracer = Tracers::all();
+        return view('admin-tracer.index', compact('tracer'));
     }
 }

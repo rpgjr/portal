@@ -13,12 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('admins', function (Blueprint $table) {
-            $table->increments('adminID');
-            $table->string('username');
-            $table->string('email');
-            $table->string('password');
-            $table->string('accessType');
+        Schema::create('alumni_tracers', function (Blueprint $table) {
+            $table->integer('studNumber')->unsigned();
+            $table->foreign('studNumber')->references('studNumber')->on('user_accounts');
+            $table->integer('questionID')->unsigned();
+            $table->foreign('questionID')->references('questionID')->on('tracers');
+            $table->string('answer');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admins');
+        Schema::dropIfExists('alumni_tracers');
     }
 };

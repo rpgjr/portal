@@ -50,10 +50,16 @@ class CareerController extends Controller
         }
     }
 
-    public function update(Request $request, $id) {
-        $career = Careers::find($id);
-        $input = $request->all();
-        $career->fill($input)->save();
+    public function update(Request $request, $careerID) {
+        $career = DB::table('careers')->where('careerID', '=', $careerID)->update([
+            'job_name' => $request->input('job_name'),
+            'company' => $request->input('company'),
+            'salary' => $request->input('salary'),
+            'description' => $request->input('description'),
+            'category' => $request->input('category'),
+            'email' => $request->input('email'),
+            'number' => $request->input('number'),
+        ]);
 
         if(Session()->get('loginID')) {
             return redirect(route('career.index'));
@@ -63,9 +69,8 @@ class CareerController extends Controller
         }
     }
 
-    public function delete($id) {
-        $career = Careers::find($id);
-        $career->delete();
+    public function delete($careerID) {
+        $career = DB::table('careers')->where('careerID', '=', $careerID)->delete();
 
         if(Session()->get('loginID')) {
             return redirect(route('career.index'));
@@ -75,10 +80,8 @@ class CareerController extends Controller
         }
     }
 
-    public function approveCareer($id) {
-        $career = Careers::find($id);
-        $career->carRequest = 1;
-        $career->save();
+    public function approveCareer($careerID) {
+        $career = DB::table('careers')->where('careerID', '=', $careerID)->update(['carRequest' => 1]);
 
         return redirect(route('admin.careerRequest'));
     }

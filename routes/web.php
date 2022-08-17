@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AlumniTracerController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\NavController;
+use App\Http\Controllers\TracerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,11 +41,20 @@ Route::post('/add-alumni', [AdminController::class, 'addAlumni'])->name('admin.a
 
 Route::get('/career', [CareerController::class, 'index'])->name('career.index');
 Route::post('/career-add', [CareerController::class, 'addJob'])->name('career.addJob');
-Route::patch('/update/{id}', ['as' => 'career.update', 'uses' => 'App\Http\Controllers\CareerController@update']);
-Route::delete('/delete/{id}', ['as' => 'career.delete', 'uses' => 'App\Http\Controllers\CareerController@delete']);
+Route::patch('/update/{careerID}', ['as' => 'career.update', 'uses' => 'App\Http\Controllers\CareerController@update']);
+Route::delete('/delete/{careerID}', ['as' => 'career.delete', 'uses' => 'App\Http\Controllers\CareerController@delete']);
 
 Route::get('/admin-career', [AdminController::class, 'adminCareer'])->name('admin.careerIndex');
 Route::delete('/alumni-delete/{studNumber}', ['as' => 'alumniList.delete', 'uses' => 'App\Http\Controllers\AdminController@deleteAlumniList']);
 Route::get('/admin-career-request', [AdminController::class, 'careerRequest'])->name('admin.careerRequest');
-Route::delete('/approve/{id}', ['as' => 'career.approve', 'uses' => 'App\Http\Controllers\CareerController@approveCareer']);
+Route::delete('/approve/{careerID}', ['as' => 'career.approve', 'uses' => 'App\Http\Controllers\CareerController@approveCareer']);
+
+// Admin Tracer
+Route::get('/admin-tracer', [AdminController::class, 'adminTracer'])->name('admin.Tracer');
+Route::post('/trace-add-question', [TracerController::class, 'addQuestion'])->name('admin.addTracerQuestion');
+Route::patch('/tracer-update-question/{questionID}', ['as' => 'admin.updateTracerQuestion', 'uses' => 'App\Http\Controllers\TracerController@updateQuestion']);
+Route::delete('/tracer-delete-question/{questionID}', ['as' => 'admin.deleteTracerQuestion', 'uses' => 'App\Http\Controllers\TracerController@deleteQuestion']);
+
+//Alumni Tracer
+Route::get('/tracer', [AlumniTracerController::class, 'index'])->name('user.tracerIndex');
 
