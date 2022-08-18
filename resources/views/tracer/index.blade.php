@@ -11,12 +11,7 @@
                 <h3>Alumni Tracer</h3>
             </div>
             <div class="col-md-6">
-                    @if (empty($tracerID))
-                        <a href="{{ route('user.createForm') }}" type="button" class="btn btn-primary float-end">Answer Alumni Tracer</a>
-                    @else
-                        <button type="button" class="btn btn-primary float-end">Update Alumni Tracer</button>
-                    @endif
-                </form>
+                <a href="{{ route('user.tracerForm') }}" type="button" class="btn btn-primary float-end">Answer Alumni Tracer</a>
             </div>
         </div>
 
@@ -30,24 +25,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach ($tracer as $questions)
-                        <tr>
 
-                                @if (($questions->question) == null)
-                                    <td scope="row">{{ $questions->questionDate }}</td>
-                                @else
-                                    <td scope="row">{{ $questions->question }}</td>
-                                @endif
-
-
-                                @if (false)
-                                    <td>Not Answered yet.</td>
-                                @else
-                                    <td>Lol</td>
-                                @endif
-
-                        </tr>
-                        @endforeach
                     </tbody>
                 </table>
             </div>

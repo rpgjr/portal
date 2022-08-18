@@ -25,13 +25,16 @@
                     <a class="nav-link @yield('home-active')" aria-current="page" href="{{ route('homepage') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link @yield('form-active')" aria-current="page" href="#forms">Forms</a>
+                    <a class="nav-link @yield('form-active')" aria-current="page" href="{{ route('user.formsIndex') }}">Forms</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link @yield('career-active')" aria-current="page" href="{{ route('career.index') }}">Careers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link @yield('tracer-active')" aria-current="page" href="">Tracer</a>
+                    <a class="nav-link @yield('tracer-active')" aria-current="page" href="{{ route('user.tracerIndex') }}">Tracer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @yield('profile-active')" aria-current="page" href="{{ route('user.profileIndex') }}">Profile</a>
                 </li>
             </ul>
             <div class="d-flex">
