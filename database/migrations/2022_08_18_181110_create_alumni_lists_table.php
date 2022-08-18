@@ -14,16 +14,19 @@ return new class extends Migration
     public function up()
     {
         Schema::create('alumni_lists', function (Blueprint $table) {
-            $table->string('lastname');
-            $table->string('firstname');
-            $table->string('middlename');
+            $table->string('lastName');
+            $table->string('firstName');
+            $table->string('middleName');
             $table->string('studNumber');
-            $table->string('course');
+            $table->string('courseID');
             $table->integer('batch');
+            $table->string('gender');
             $table->integer('byear');
             $table->integer('bmonth');
             $table->integer('bday');
-            $table->timestamps();
+            $table->string('email')->unique();
+            $table->string('number');
+            $table->string('address');
         });
     }
 

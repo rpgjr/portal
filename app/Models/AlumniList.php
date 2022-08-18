@@ -9,16 +9,19 @@ class AlumniList extends Model
 {
 
     protected $fillable = [
-        'lastname',
-        'firstname',
-        'middlename',
+        'lastName',
+        'firstName',
+        'middleName',
         'studNumber',
-        'name',
-        'course',
+        'courseID',
         'batch',
+        'gender',
         'byear',
         'bmonth',
         'bday',
+        'email',
+        'number',
+        'address',
     ];
 
     use HasFactory;
