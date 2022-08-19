@@ -13,8 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('user_accounts', function (Blueprint $table) {
+        Schema::create('tbl_alumni', function (Blueprint $table) {
             $table->increments('userID');
+            $table->string('studNumber');
             $table->string('lastName');
             $table->string('firstName');
             $table->string('middleName');
@@ -22,10 +23,12 @@ return new class extends Migration
             $table->integer('batch');
             $table->string('gender');
             $table->date('bday');
-            $table->string('studNumber');
-            $table->string('email')->unique();
+            $table->integer('age');
+            $table->string('religion');
+            $table->string('cityAddress');
+            $table->string('provincialAddress')->nullable();
+            $table->string('email');
             $table->string('number');
-            $table->string('address');
             $table->string('username');
             $table->string('password');
             $table->string('accessType');
@@ -40,6 +43,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_accounts');
+        Schema::dropIfExists('alumnis');
     }
 };

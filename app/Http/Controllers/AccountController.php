@@ -3,12 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Admin;
+use App\Models\Alumni;
 use App\Models\AlumniList;
-use App\Models\Courses;
-use App\Models\UserAccounts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Session;
 
 class AccountController extends Controller
 {
@@ -22,16 +20,18 @@ class AccountController extends Controller
                 'batch' => 'required',
                 'gender' => 'required',
                 'bday' => 'required',
-                'studNumber' => 'required|unique:user_accounts',
-                'email' => 'required|unique:user_accounts',
-                'number' => 'required|unique:user_accounts',
-                'address' => 'required',
-                'username' => 'required|unique:user_accounts',
+                'age' => 'required',
+                'religion' => 'required',
+                'studNumber' => 'required|unique:tbl_alumni',
+                'email' => 'required|unique:tbl_alumni',
+                'number' => 'required|unique:tbl_alumni',
+                'cityAddress' => 'required',
+                'username' => 'required|unique:tbl_alumni',
                 'password' => 'required|min:8',
                 'accessType' => 'required',
             ]);
 
-            $account = new UserAccounts();
+            $account = new Alumni();
             $account->lastName = $request->lastName;
             $account->firstName = $request->firstName;
             $account->middleName = $request->middleName;
@@ -39,10 +39,12 @@ class AccountController extends Controller
             $account->batch = $request->batch;
             $account->gender = $request->gender;
             $account->bday = $request->bday;
+            $account->age = $request->age;
+            $account->religion = $request->religion;
             $account->studNumber = $request->studNumber;
             $account->email = $request->email;
             $account->number = $request->number;
-            $account->address = $request->address;
+            $account->cityAddress = $request->cityAddress;
             $account->username = $request->username;
             $account->password = Hash::make($request->password);
             $account->accessType = $request->accessType;
@@ -72,7 +74,7 @@ class AccountController extends Controller
             'password' => 'required',
         ]);
 
-        $account = UserAccounts::where('username', '=', $request->username)->first();
+        $account = Alumni::where('username', '=', $request->username)->first();
         if($account) {
             if(Hash::check($request->password, $account->password)) {
                 $request->session()->put('loginID', $account->username);
@@ -117,15 +119,15 @@ class AccountController extends Controller
     }
 
     public function logout() {
-        if(Session::has('loginID')) {
-            Session::pull('loginID');
+        if(Session()->has('loginID')) {
+            Session()->pull('loginID');
             return redirect('/');
         }
     }
 
     public function logoutAdmin() {
-        if(Session::has('loginAdminID')) {
-            Session::pull('loginAdminID');
+        if(Session()->has('loginAdminID')) {
+            Session()->pull('loginAdminID');
             return redirect('/');
         }
     }

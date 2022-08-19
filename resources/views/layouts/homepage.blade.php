@@ -61,6 +61,7 @@
 
     {{-- JS --}}
     <script src="{{ asset('bootstrap/js/bootstrap.bundle.js') }}"></script>
+    <script src="{{ asset('bootstrap/js/pds.js') }}"></script>
 
     <footer class="homepage-footer">
         <center>PUPT Alumni Portal System - [All4One]</center>

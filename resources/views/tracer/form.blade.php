@@ -16,10 +16,43 @@
         </div>
 
         <div class="row my-3 justify-content-center">
-            <div class="col-md-7">
+            <div class="col-md-8">
                 <form>
                     @csrf
                     <div class="row box-tracer">
+                        <div class="col-md-12 my-4">
+                            <center>
+                                <h3>Information Sheet</h3>
+                            </center>
+                        </div>
+                        <div class="col-md-4 my-2">
+                            <label class="form-label">Last Name</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="col-md-4 my-2">
+                            <label class="form-label">First Name</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="col-md-4 my-2">
+                            <label class="form-label">Middle Name</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="col-md-4 my-2">
+                            <label class="form-label">Course</label>
+                            <select class="form-select">
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 my-2">
+                            <label class="form-label">Contact Number</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="col-md-4 my-2">
+                            <label class="form-label">Email</label>
+                            <input type="text" class="form-control">
+                        </div>
                         <div class="col-md-12 my-4">
                             <center>
                                 <h3>Questionnaire Form</h3>
@@ -38,7 +71,7 @@
                             <input type="text" class="form-control">
                         </div>
                         <div class="col-md-12 my-2">
-                            <label class="form-label">Current Plantilla Item/Work Positio:</label>
+                            <label class="form-label">Current Plantilla Item/Work Position:</label>
                             <input type="text" class="form-control">
                         </div>
                         <div class="col-md-12 my-2">

@@ -2,13 +2,11 @@
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\AlumniTracerController;
 use App\Http\Controllers\CareerController;
 use App\Http\Controllers\FormsController;
 use App\Http\Controllers\NavController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TracerController;
-use App\Http\Controllers\UserTracerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,9 +20,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Landing Page and Homepage Routes
 Route::get('/', [NavController::class, 'landing'])->middleware('loggedInSession')->name('landing-page');
 Route::get('/home', [NavController::class, 'index'])->name('homepage')->middleware('sessionChecker');
 
+
+// Login Routes
 Route::get('/registration', [NavController::class, 'register'])->name('registration')->middleware('loggedInSession');
 Route::post('/register-user', [AccountController::class, 'regUser'])->name('user.regUser');
 
@@ -53,8 +54,8 @@ Route::get('/admin-career-request', [AdminController::class, 'careerRequest'])->
 Route::delete('/approve/{careerID}', ['as' => 'career.approve', 'uses' => 'App\Http\Controllers\CareerController@approveCareer']);
 
 // Alumni Tracer Routes
-Route::get('/tracer', [UserTracerController::class, 'index'])->name('user.tracerIndex');
-Route::get('/tracer-answer-form', [UserTracerController::class, 'answerForm'])->name('user.tracerForm');
+Route::get('/tracer', [TracerController::class, 'index'])->name('user.tracerIndex');
+Route::get('/tracer-answer-form', [TracerController::class, 'answerForm'])->name('user.tracerForm');
 
 // Alumni Profile Routes
 Route::get('/profile', [ProfileController::class, 'index'])->name('user.profileIndex');

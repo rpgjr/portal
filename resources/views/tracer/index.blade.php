@@ -25,7 +25,70 @@
                       </tr>
                     </thead>
                     <tbody>
-
+                        <tr>
+                            <td>Contact Number</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Email Address</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Date of Graduation</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Date of 1st Employment</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Date of Current Employment</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Current Nature/Type of Work</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Current Plantilla Item/Work Position</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Current Status of Employment</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Current Monthly Income</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Is your job/work related to your undergraduate program?</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Present Company Email Address</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Present Company Contact Number</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>First Job/Title/Position</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Company name (First Job)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Company Email Address (First Job)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Company Contact Number (First Job)</td>
+                            <td></td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

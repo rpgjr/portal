@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Courses;
 use Illuminate\Http\Request;
+use DB;
 
 class FormsController extends Controller
 {
@@ -11,7 +12,7 @@ class FormsController extends Controller
         return view('forms.index');
     }
 
-    //Exit Inteview return views
+//Exit Inteview return views
     public function exitP1() {
         $courses = Courses::all();
         return view('forms.exitP1', compact('courses'));
@@ -33,16 +34,17 @@ class FormsController extends Controller
         return view('forms.exitP5');
     }
 
-    //Personal Data Sheet return views
+//Personal Data Sheet return views
     public function pdsP1() {
+        $account = DB::table('user_accounts')->where('username', '=', Session()->get('loginID'))->get();
         $courses = Courses::all();
-        return view('forms.pdsP1', compact('courses'));
+        return view('forms.pdsP1', compact('courses', 'account'));
     }
     public function pdsP2() {
         return view('forms.pdsP2');
     }
 
-    //SAS Form return views
+//SAS Form return views
     public function sasP1() {
         $courses = Courses::all();
         return view('forms.sasP1', compact('courses'));
