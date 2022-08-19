@@ -13,6 +13,7 @@
         </div>
 
         @foreach ($account as $acc)
+        {!! Form::model($acc, [ 'method' => 'patch','route' => ['user.updateProfile', $acc->userID] ]) !!}
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="row box-profile align-items-center">
@@ -21,20 +22,20 @@
                     </div>
                     <div class="col-md-4 my-2">
                         <label class="form-label">Last Name</label>
-                        <input type="text" class="form-control" placeholder="Last Name" name="lastName" value="{{ $acc->lastName }}">
+                        <input type="text" class="form-control" name="lastName" value="{{ $acc->lastName }}">
                         <span class="text-danger">@error('lastName') {{$message}} @enderror</span>
                     </div>
                     <div class="col-md-4 my-2">
                         <label class="form-label">First Name</label>
-                        <input type="text" class="form-control" placeholder="First Name" name="firstName" value="{{ $acc->firstName }}">
+                        <input type="text" class="form-control" name="firstName" value="{{ $acc->firstName }}">
                         <span class="text-danger">@error('firstName') {{$message}} @enderror</span>
                     </div>
                     <div class="col-md-4 my-2">
                         <label class="form-label">Middle Name</label>
-                        <input type="text" class="form-control" placeholder="Middle Name" name="middleName" value="{{ $acc->middleName }}">
+                        <input type="text" class="form-control" name="middleName" value="{{ $acc->middleName }}">
                         <span class="text-danger">@error('middleName') {{$message}} @enderror</span>
                     </div>
-                    <div class="col-md-6 my-2">
+                    <div class="col-md-4 my-2">
                         <label class="form-label">Course</label>
                         <select class="form-select" name="courseID">
                             @foreach ($courses as $course)
@@ -46,7 +47,7 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="col-md-6 my-2">
+                    <div class="col-md-4 my-2">
                         <label class="form-label">Batch</label>
                         <select class="form-select" name="batch">
                             @for ($i = date('Y'); $i >= 1996; $i--)
@@ -59,46 +60,61 @@
                         </select>
                     </div>
                     <div class="col-md-4 my-2">
+                        <label class="form-label">Student Number</label>
+                        <input type="text" class="form-control" name="studNumber" value="{{ $acc->studNumber }}">
+                        <span class="text-danger">@error('studNumber') {{$message}} @enderror</span>
+                    </div>
+                    <div class="col-md-3 my-2">
                         <label class="form-label">Gender:</label>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Male"
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" value="Male"
                                 @if ('Male' == $acc->gender)
                                     checked
                                 @endif>
-                            <label class="form-check-label" for="inlineRadio1">Male</label>
+                            <label class="form-check-label">Male</label>
                         </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Female"
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" value="Female"
                                 @if ('Female' == $acc->gender)
                                     checked
                                 @endif>
-                            <label class="form-check-label" for="inlineRadio2">Female</label>
+                            <label class="form-check-label">Female</label>
                         </div>
                     </div>
-                    <div class="col-md-4 my-2">
+                    <div class="col-md-3 my-2">
                         <label class="form-label">Birthday</label>
-                        <input type="date" class="form-control" placeholder="Last Name" name="bday" value="{{ $acc->bday }}">
+                        <input type="date" class="form-control" name="bday" value="{{ $acc->bday }}">
                         <span class="text-danger">@error('bday') {{$message}} @enderror</span>
                     </div>
-                    <div class="col-md-4 my-2">
-                        <label class="form-label">Student Number</label>
-                        <input type="text" class="form-control" placeholder="Student Number" name="studNumber" value="{{ $acc->studNumber }}">
-                        <span class="text-danger">@error('studNumber') {{$message}} @enderror</span>
+                    <div class="col-md-3 my-2">
+                        <label class="form-label">Age</label>
+                        <input type="text" class="form-control" name="age" value="{{ $acc->age }}">
+                        <span class="text-danger">@error('age') {{$message}} @enderror</span>
+                    </div>
+                    <div class="col-md-3 my-2">
+                        <label class="form-label">Religion</label>
+                        <input type="text" class="form-control" name="religion" value="{{ $acc->religion }}">
+                        <span class="text-danger">@error('religion') {{$message}} @enderror</span>
                     </div>
                     <div class="col-md-6 my-2">
                         <label class="form-label">Email</label>
-                        <input type="text" class="form-control" placeholder="Email" name="email" value="{{ $acc->email }}">
+                        <input type="text" class="form-control" name="email" value="{{ $acc->email }}">
                         <span class="text-danger">@error('email') {{$message}} @enderror</span>
                     </div>
                     <div class="col-md-6 my-2">
                         <label class="form-label">Mobile Number</label>
-                        <input type="text" class="form-control" placeholder="Mobile Number" name="number" value="{{ $acc->number }}">
+                        <input type="text" class="form-control" name="number" value="{{ $acc->number }}">
                         <span class="text-danger">@error('number') {{$message}} @enderror</span>
                     </div>
                     <div class="col-md-12 my-2">
-                        <label class="form-label">Address</label>
-                        <input type="text" class="form-control" placeholder="Address" name="address" value="{{ $acc->address }}">
-                        <span class="text-danger">@error('address') {{$message}} @enderror</span>
+                        <label class="form-label">City Address</label>
+                        <input type="text" class="form-control" name="cityAddress" value="{{ $acc->cityAddress }}">
+                        <span class="text-danger">@error('cityAddress') {{$message}} @enderror</span>
+                    </div>
+                    <div class="col-md-12 my-2">
+                        <label class="form-label">Provincial Address</label>
+                        <input type="text" class="form-control" placeholder="Provincial Address" name="provincialAddress" value="{{ $acc->provincialAddress }}">
+                        <span class="text-danger">@error('provincialAddress') {{$message}} @enderror</span>
                     </div>
 
                     <div class="col-md-12 text-center mt-5 mb-2">
@@ -107,6 +123,7 @@
                 </div>
             </div>
         </div>
+        {!! Form::close() !!}
         @endforeach
     </div>
 

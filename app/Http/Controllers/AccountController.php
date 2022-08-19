@@ -7,6 +7,7 @@ use App\Models\Alumni;
 use App\Models\AlumniList;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Auth\Events\Registered;
 
 class AccountController extends Controller
 {

@@ -23,56 +23,56 @@
                         </div>
                         <div class="col-md-4 my-2">
                             <label class="form-label">Last Name</label>
-                            <input type="text" class="form-control" value="{{ $user->lastName }}">
+                            <input type="text" class="form-control" value="{{ $user->lastName }}" name="lastName" id="lastName">
                         </div>
                         <div class="col-md-4 my-2">
                             <label class="form-label">First Name</label>
-                            <input type="text" class="form-control" value="{{ $user->firstName }}">
+                            <input type="text" class="form-control" value="{{ $user->firstName }}" name="firstName" id="firstName">
                         </div>
                         <div class="col-md-4 my-2">
                             <label class="form-label">Middle Name</label>
-                            <input type="text" class="form-control" value="{{ $user->middleName }}">
+                            <input type="text" class="form-control" value="{{ $user->middleName }}" name="middleName" id="middleName">
                         </div>
                         <div class="col-md-4 my-2">
                             <label class="form-label">Gender: </label>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="Male"
+                                <input class="form-check-input" type="radio" name="gender" id="gender" value="Male"
                                     @if ('Male' == $user->gender)
                                         checked
                                     @endif>
-                                <label class="form-check-label" for="inlineRadio1">Male</label>
+                                <label class="form-check-label">Male</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="Female"
+                                <input class="form-check-input" type="radio" name="gender" id="gender" value="Female"
                                     @if ('Female' == $user->gender)
                                         checked
                                     @endif>
-                                <label class="form-check-label" for="inlineRadio2">Female</label>
+                                <label class="form-check-label">Female</label>
                             </div>
                         </div>
                         <div class="col-md-4 my-2">
                             <label class="form-label">Age</label>
-                            <input type="text" class="form-control" placeholder="Age">
+                            <input type="text" class="form-control" value="{{ $user->age }}" name="age" id="age">
                         </div>
                         <div class="col-md-4 my-2">
                             <label class="form-label">Birthday</label>
-                            <input type="date" class="form-control" value="{{ $user->bday }}">
+                            <input type="date" class="form-control" value="{{ $user->bday }}" name="bday" id=""bday>
                         </div>
                         <div class="col-md-6 my-2">
                             <label class="form-label">Landline/Mobile Number</label>
-                            <input type="text" class="form-control" value="{{ $user->number }}">
+                            <input type="text" class="form-control" value="{{ $user->number }}" name="number" id=""number>
                         </div>
                         <div class="col-md-6 my-2">
                             <label class="form-label">Email</label>
-                            <input type="text" class="form-control" value="{{ $user->email }}">
+                            <input type="text" class="form-control" value="{{ $user->email }}" name="email" id="email">
                         </div>
                         <div class="col-md-4 my-2">
                             <label class="form-label">Religion</label>
-                            <input type="text" class="form-control" placeholder="Religion">
+                            <input type="text" class="form-control" value="{{ $user->religion }}" name="religion" id=""religion>
                         </div>
                         <div class="col-md-4 my-2">
                             <label class="form-label">Course</label>
-                            <select class="form-select" name="courseID">
+                            <select class="form-select" name="courseID" id="courseID">
                                 @foreach ($courses as $course)
                                     <option value="{{ $course->courseID }}"
                                         @if (($course->courseID) == $user->courseID)
@@ -84,7 +84,7 @@
                         </div>
                         <div class="col-md-4 my-2">
                             <label class="form-label">Year Graduated</label>
-                            <select class="form-select" name="batch">
+                            <select class="form-select" name="batch" id="batch">
                                 @for ($i = date('Y'); $i >= 1996; $i--)
                                     <option value="{{ $i }}"
                                         @if (($user->batch) == $i)
@@ -96,30 +96,30 @@
                         </div>
                         <div class="col-md-12 my-2">
                             <label class="form-label">City Address</label>
-                            <input type="text" class="form-control" value="{{ $user->address }}">
+                            <input type="text" class="form-control" value="{{ $user->cityAddress }}" name="cityAddress" id="cityAddress">
                         </div>
                         <div class="col-md-12 my-2">
                             <label class="form-label">Provincial Address</label>
-                            <input type="text" class="form-control" placeholder="Provincial Address">
+                            <input type="text" class="form-control" placeholder="Provincial Address" name="provincialAddress" id="provincialAddress">
                         </div>
                         <div class="col-md-12 mt-2">
                             <hr style="height:2px;border-width:5px;color:#000000;background-color:#000000">
                         </div>
                         <div class="col-md-6 my-2">
                             <label class="form-label">Father's Name</label>
-                            <input type="text" class="form-control" placeholder="Father's Name">
+                            <input type="text" class="form-control" placeholder="Father's Name" name="fathersName" id="fathersName">
                         </div>
                         <div class="col-md-6 my-2">
                             <label class="form-label">Father's Telephone/Cellphone No.</label>
-                            <input type="text" class="form-control" placeholder="Father's Contact No.">
+                            <input type="text" class="form-control" placeholder="Father's Contact No." name="fathersNumber" id="fathersNumber">
                         </div>
                         <div class="col-md-6 my-2">
                             <label class="form-label">Mother's Name</label>
-                            <input type="text" class="form-control" placeholder="Mother's Name">
+                            <input type="text" class="form-control" placeholder="Mother's Name" name="mothersName" id="mothersName">
                         </div>
                         <div class="col-md-6 my-2">
                             <label class="form-label">Mother's Telephone/Cellphone No.</label>
-                            <input type="text" class="form-control" placeholder="Mother's Contact No.">
+                            <input type="text" class="form-control" placeholder="Mother's Contact No." name="mothersNumber" id="mothersNumber">
                         </div>
                         @endforeach
                         {{-- End Fields --}}
@@ -127,7 +127,7 @@
                             <nav aria-label="Page navigation example">
                                 <ul class="pagination justify-content-center">
                                   <li class="page-item"><a class="page-link disabled" href="">Previous</a></li>
-                                  <li class="page-item"><a class="page-link" href="{{ route('user.pdsP2') }}">Next</a></li>
+                                  <li class="page-item"><a class="page-link" href="{{ route('user.pdsP2') }}" id="btnNext">Next</a></li>
                                 </ul>
                             </nav>
                         </div>

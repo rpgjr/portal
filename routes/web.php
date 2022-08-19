@@ -8,6 +8,9 @@ use App\Http\Controllers\NavController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TracerController;
 use Illuminate\Support\Facades\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use App\Models\Alumni;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,6 +46,8 @@ Route::get('/admin', [AdminController::class, 'index'])->name('admin.index')->mi
 Route::get('/add-list-alumni', [AdminController::class, 'addListAlumni'])->name('admin.addList')->middleware('adminSession');
 Route::post('/add-alumni', [AdminController::class, 'addAlumni'])->name('admin.addAlumni')->middleware('adminSession');
 
+
+// Career Routes
 Route::get('/career', [CareerController::class, 'index'])->name('career.index');
 Route::post('/career-add', [CareerController::class, 'addJob'])->name('career.addJob');
 Route::patch('/update/{careerID}', ['as' => 'career.update', 'uses' => 'App\Http\Controllers\CareerController@update']);
@@ -59,6 +64,7 @@ Route::get('/tracer-answer-form', [TracerController::class, 'answerForm'])->name
 
 // Alumni Profile Routes
 Route::get('/profile', [ProfileController::class, 'index'])->name('user.profileIndex');
+Route::patch('/update-profile/{userID}', ['as' => 'user.updateProfile', 'uses' => 'App\Http\Controllers\ProfileController@updateProfile']);
 
 // Alumni Forms Routes
 Route::get('/forms', [FormsController::class, 'index'])->name('user.formsIndex');

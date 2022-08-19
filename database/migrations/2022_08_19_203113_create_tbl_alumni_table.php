@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('cityAddress');
             $table->string('provincialAddress')->nullable();
             $table->string('email');
+            $table->timestamp('email_verified_at');
             $table->string('number');
             $table->string('username');
             $table->string('password');
@@ -43,6 +44,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('alumnis');
+        Schema::dropIfExists('tbl_alumni');
     }
 };

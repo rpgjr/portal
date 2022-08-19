@@ -36,7 +36,7 @@ class FormsController extends Controller
 
 //Personal Data Sheet return views
     public function pdsP1() {
-        $account = DB::table('user_accounts')->where('username', '=', Session()->get('loginID'))->get();
+        $account = DB::table('tbl_alumni')->where('username', '=', Session()->get('loginID'))->get();
         $courses = Courses::all();
         return view('forms.pdsP1', compact('courses', 'account'));
     }

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Alumni;
 use App\Models\Courses;
-use App\Models\UserAccounts;
 use Session;
 
 use Illuminate\Http\Request;
@@ -22,7 +22,7 @@ class NavController extends Controller
     public function index() {
         $data = array();
         if(Session::has('loginID')) {
-            $data = UserAccounts::where('username', '=', Session::get('loginID'))->first();
+            $data = Alumni::where('username', '=', Session::get('loginID'))->first();
         }
         return view('user.index', compact('data'));
     }
