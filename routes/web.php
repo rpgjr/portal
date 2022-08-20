@@ -77,6 +77,7 @@ Route::get('/exit-interview-page-5', [FormsController::class, 'exitP5'])->name('
 // Alumni Personal Data Sheet Routes
 Route::get('/pds-page-1', [FormsController::class, 'pdsP1'])->name('user.pdsP1');
 Route::get('/pds-page-2', [FormsController::class, 'pdsP2'])->name('user.pdsP2');
+Route::patch('/answer-pds/page1', ['as' => 'user.updateProfile', 'uses' => 'App\Http\Controllers\ProfileController@updateProfile']);
 
 // SAS Form Routes
 Route::get('/sas-page-1', [FormsController::class, 'sasP1'])->name('user.sasP1');
@@ -84,5 +85,9 @@ Route::get('/sas-page-2', [FormsController::class, 'sasP2'])->name('user.sasP2')
 Route::get('/sas-page-3', [FormsController::class, 'sasP3'])->name('user.sasP3');
 Route::get('/sas-page-4', [FormsController::class, 'sasP4'])->name('user.sasP4');
 Route::get('/sas-page-5', [FormsController::class, 'sasP5'])->name('user.sasP5');
+
+// PDS Input Answers
+
+
 
 

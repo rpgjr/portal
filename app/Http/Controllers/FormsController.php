@@ -40,6 +40,24 @@ class FormsController extends Controller
         $courses = Courses::all();
         return view('forms.pdsP1', compact('courses', 'account'));
     }
+    // public function pdsP1(Request $request) {
+    //     $account = DB::table('tbl_alumni')->where('userID', '=', $userID)->update([
+    //         'lastName' => $request->input('lastName'),
+    //         'firstName' => $request->input('firstName'),
+    //         'middleName' => $request->input('middleName'),
+    //         'courseID' => $request->input('courseID'),
+    //         'batch' => $request->input('batch'),
+    //         'gender' => $request->input('gender'),
+    //         'bday' => $request->input('bday'),
+    //         'age' => $request->input('age'),
+    //         'religion' => $request->input('religion'),
+    //         'studNumber' => $request->input('studNumber'),
+    //         'email' => $request->input('email'),
+    //         'number' => $request->input('number'),
+    //         'cityAddress' => $request->input('cityAddress'),
+    //         'provincialAddress' => $request->input('provincialAddress'),
+    //     ]);
+    // }
     public function pdsP2() {
         return view('forms.pdsP2');
     }

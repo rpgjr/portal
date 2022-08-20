@@ -108,10 +108,10 @@
             </div>
             <div class="col-md-4 my-2">
                 <label class="form-label">Confirm Password</label>
-                <input type="password" class="form-control" placeholder="********" name="confirmPassword">
+                <input type="password" class="form-control" placeholder="********" name="password_confirmation">
                 <span class="text-danger">@error('password') {{$message}} @enderror</span>
-                <input type="hidden" name="accessType" value="alumni">
             </div>
+            <input type="hidden" name="accessType" value="alumni">
         </div>
 
         <div class="row">

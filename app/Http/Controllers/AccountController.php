@@ -28,7 +28,7 @@ class AccountController extends Controller
                 'number' => 'required|unique:tbl_alumni',
                 'cityAddress' => 'required',
                 'username' => 'required|unique:tbl_alumni',
-                'password' => 'required|min:8',
+                'password' => 'required|confirmed|min:8',
                 'accessType' => 'required',
             ]);
 

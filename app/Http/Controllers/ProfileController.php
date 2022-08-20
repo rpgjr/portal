@@ -16,7 +16,7 @@ class ProfileController extends Controller
     }
 
     public function updateProfile(Request $request, $userID) {
-        $career = DB::table('tbl_alumni')->where('userID', '=', $userID)->update([
+        $account = DB::table('tbl_alumni')->where('userID', '=', $userID)->update([
             'lastName' => $request->input('lastName'),
             'firstName' => $request->input('firstName'),
             'middleName' => $request->input('middleName'),
