@@ -176,7 +176,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="" class="nav-link px-3 @yield('admin.careerApplicants')">
+                                <a href="{{ route('admin.viewApplicants') }}" class="nav-link px-3 @yield('admin.careerApplicants')">
                                     <span class="me-2">
                                         <i class="fa-solid fa-list"></i>
                                     </span>
@@ -187,7 +187,7 @@
                     </div>
                 {{-- Forms --}}
                     <hr>
-                    <a class="nav-link px-3 @yield('careers-status')" data-bs-toggle="collapse" href="#forms">
+                    <a class="nav-link px-3 @yield('forms-status')" data-bs-toggle="collapse" href="#forms">
                         <i class="fa-solid fa-file"></i>
                         <span>Forms</span>
                         <span class="ms-auto">
@@ -196,10 +196,10 @@
                             </span>
                         </span>
                     </a>
-                    <div class="collapse @yield('careers-collapse')" id="forms">
+                    <div class="collapse @yield('forms-collapse')" id="forms">
                         <ul class="navbar-nav ps-3">
                             <li>
-                                <a href="{{ route('admin.careerIndex') }}" class="nav-link px-3 @yield('manage-career-status')">
+                                <a href="{{ route('admin.monitorForms') }}" class="nav-link px-3 @yield('monitor-forms-status')">
                                     <span class="me-2">
                                         <i class="fa-solid fa-eye"></i>
                                     </span>
@@ -219,7 +219,7 @@
                     </div>
                 {{-- News and Events --}}
                     <hr>
-                    <a class="nav-link px-3 @yield('forms-status')" data-bs-toggle="collapse" href="#news">
+                    <a class="nav-link px-3 @yield('news-status')" data-bs-toggle="collapse" href="#news">
                         <i class="fa-solid fa-newspaper"></i>
                         <span>News and Events</span>
                         <span class="ms-auto">
@@ -228,7 +228,7 @@
                             </span>
                         </span>
                     </a>
-                    <div class="collapse @yield('forms-collapse')" id="news">
+                    <div class="collapse @yield('news-collapse')" id="news">
                         <ul class="navbar-nav ps-3">
                             <li>
                                 <a href="" class="nav-link px-3 @yield('')">

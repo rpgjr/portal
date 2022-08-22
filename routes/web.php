@@ -85,6 +85,11 @@ Route::post('/forms/pds-answer', [FormsController::class, 'pdsAnswer'])->name('u
 // Data Privacy Notice
 Route::post('/data-privacy-notice', [FormsController::class, 'dataPrivacy'])->name('user.dataPrivacy');
 
+// Admin Forms
+Route::get('/admin/monitor-forms', [FormsController::class, 'monitorForms'])->name('admin.monitorForms');
+
+// Admin Career
+Route::get('/admin/career-applicants', [CareerController::class, 'viewApplicants'])->name('admin.viewApplicants');
 
 
 

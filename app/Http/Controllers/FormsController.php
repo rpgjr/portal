@@ -6,7 +6,9 @@ use App\Models\Courses;
 use App\Models\ExitInterview;
 use App\Models\PDS;
 use App\Models\SASForm;
+use App\Models\Tracer;
 use Illuminate\Http\Request;
+use App\Models\Alumni;
 use DB;
 
 class FormsController extends Controller
@@ -506,7 +508,7 @@ class FormsController extends Controller
         return view('forms.index', compact('pds', 'exit', 'sas'));
     }
 
-    // Data Privacy Notice
+// Data Privacy Notice
     public function dataPrivacy(Request $request) {
         $request->validate([
             'isAgreed' => 'required',
@@ -518,5 +520,14 @@ class FormsController extends Controller
         else {
             return redirect(route('user.formsIndex'));
         }
+    }
+
+// Admin Monitor Forms
+    public function monitorForms() {
+        $pds = PDS::all();
+        $exit = ExitInterview::all();
+        $sas = SASForm::all();
+        $account = Alumni::all();
+        return view('admin-forms.monitorForms', compact('pds', 'exit', 'sas', 'account'));
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Careers;
 use Illuminate\Http\Request;
 use DB;
+use App\Models\Alumni;
 
 class CareerController extends Controller
 {
@@ -98,5 +99,14 @@ class CareerController extends Controller
         $applicant = DB::insert('insert into career_applicants (userID, careerID) values (?, ?)', [$request->userID, $request->careerID]);
 
         return redirect(route('career.index'));
+    }
+
+    // Admin View Applicants
+    public function viewApplicants() {
+        $account = Alumni::all();
+        $career = Careers::all();
+        $applicants = DB::table('career_applicants')->get();
+
+        return view('admin-career.applicants', compact('account', 'career', 'applicants'));
     }
 }
