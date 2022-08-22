@@ -10,8 +10,11 @@ class CareerController extends Controller
 {
     public function index() {
         $data = Session()->get('loginID');
+        $account = DB::table('tbl_alumni')->where('username', '=', Session()->get('loginID'))->get();
         $career = DB::table('careers')->where('carRequest', '=', 1)->get();
-        return view('career.index', compact('career', 'data'));
+        $userID = DB::table('tbl_alumni')->where('username', '=', Session()->get('loginID'))->first('userID')->userID;
+        $applicant = DB::table('career_applicants')->where('userID', '=', $userID)->get();
+        return view('career.index', compact('career', 'data', 'account', 'applicant'));
     }
 
     public function addJob(Request $request) {
@@ -84,5 +87,16 @@ class CareerController extends Controller
         $career = DB::table('careers')->where('careerID', '=', $careerID)->update(['carRequest' => 1]);
 
         return redirect(route('admin.careerRequest'));
+    }
+
+    public function applyCareer(Request $request) {
+        $request->validate([
+            'userID' => 'required',
+            'careerID' => 'required',
+        ]);
+
+        $applicant = DB::insert('insert into career_applicants (userID, careerID) values (?, ?)', [$request->userID, $request->careerID]);
+
+        return redirect(route('career.index'));
     }
 }

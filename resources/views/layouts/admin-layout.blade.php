@@ -175,6 +175,46 @@
                                     <span>Career Requests</span>
                                 </a>
                             </li>
+                            <li>
+                                <a href="" class="nav-link px-3 @yield('admin.careerApplicants')">
+                                    <span class="me-2">
+                                        <i class="fa-solid fa-list"></i>
+                                    </span>
+                                    <span>List of Job Applicants</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                {{-- Forms --}}
+                    <hr>
+                    <a class="nav-link px-3 @yield('careers-status')" data-bs-toggle="collapse" href="#forms">
+                        <i class="fa-solid fa-file"></i>
+                        <span>Forms</span>
+                        <span class="ms-auto">
+                            <span class="right-icon">
+                                <i class="fa-solid fa-caret-down"></i>
+                            </span>
+                        </span>
+                    </a>
+                    <div class="collapse @yield('careers-collapse')" id="forms">
+                        <ul class="navbar-nav ps-3">
+                            <li>
+                                <a href="{{ route('admin.careerIndex') }}" class="nav-link px-3 @yield('manage-career-status')">
+                                    <span class="me-2">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </span>
+                                    <span>Monitor Forms</span>
+                                </a>
+                            </li>
+                            <li>
+                                @include('career.add-modal')
+                                <a class="nav-link px-3 @yield('')" data-bs-toggle="modal" data-bs-target="#addCareer">
+                                    <span class="me-2">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </span>
+                                    <span>Send Notification</span>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 {{-- News and Events --}}

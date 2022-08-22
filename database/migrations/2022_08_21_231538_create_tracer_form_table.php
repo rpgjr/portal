@@ -13,8 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pds', function (Blueprint $table) {
-            $table->id();
+        Schema::create('tracer_form', function (Blueprint $table) {
+            $table->increments('tracerID');
+            $table->unsignedInteger('userID');
+            $table->foreign('userID')->references('userID')->on('tbl_alumni');
+            $table->string('lastName');
+            $table->string('firstName');
+            $table->string('middleName');
             $table->timestamps();
         });
     }
@@ -26,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pds');
+        Schema::dropIfExists('tracer_form');
     }
 };

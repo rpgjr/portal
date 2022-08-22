@@ -37,8 +37,10 @@ class AdminController extends Controller
 
     public function adminCareer() {
         $data = Session()->get('loginID');
+        // tang ina nung accoung sulusyonan mo yan...
+        $account = DB::table('tbl_alumni')->where('username', '=', Session()->get('loginID'))->get();
         $career = Careers::all();
-        return view('admin-career.index', compact('career', 'data'));
+        return view('admin-career.index', compact('career', 'data', 'account'));
     }
 
     public function deleteAlumniList($studNumber) {

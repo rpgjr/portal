@@ -48,15 +48,15 @@
     </div>
 </section>
 
-<section class="donation-section" id="donation">
+<section class="donation-section" id="tracer">
     <div class="container d-flex justify-content-center">
         <div class="row feature-design align-items-center">
             <div class="col-md-6 align-items-center justify-content-start">
-                <img src="{{ asset('img/donation.jpg') }}" alt="">
+                <img src="{{ asset('img/career-homepage.jpg') }}" alt="">
             </div>
             <div class="col-md-6">
-                <h3>Donations</h3>
-                <p>You can donate to help finance our Organizations as well as our Sintang Paaralan!</p>
+                <h3>Tracer</h3>
+                <p>You can update you information in the Tracer tab for us to check your current employment status. It will possitively help our university in assisting you in your career.</p>
             </div>
         </div>
     </div>

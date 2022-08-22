@@ -31,7 +31,7 @@
                     <a class="nav-link @yield('job-active')" aria-current="page" href="#career">Careers</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link @yield('donation-active')" aria-current="page" href="#donation">Donations</a>
+                    <a class="nav-link @yield('donation-active')" aria-current="page" href="#tracer">Tracer</a>
                 </li>
             </ul>
             <div class="d-flex">

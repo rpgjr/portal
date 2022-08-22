@@ -52,8 +52,7 @@ class AccountController extends Controller
             $result = $account->save();
 
             if($result) {
-                $request->session()->put('loginID', $account->username);
-                return redirect(route('homepage'));
+                return redirect(route('login'));
             }
             else {
                 return back()->with('fail', 'There is a problem creating your account');

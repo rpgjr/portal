@@ -58,6 +58,9 @@ Route::delete('/alumni-delete/{studNumber}', ['as' => 'alumniList.delete', 'uses
 Route::get('/admin-career-request', [AdminController::class, 'careerRequest'])->name('admin.careerRequest');
 Route::delete('/approve/{careerID}', ['as' => 'career.approve', 'uses' => 'App\Http\Controllers\CareerController@approveCareer']);
 
+// Career Application
+Route::post('/career/apply', [CareerController::class, 'applyCareer'])->name('user.applyCareer');
+
 // Alumni Tracer Routes
 Route::get('/tracer', [TracerController::class, 'index'])->name('user.tracerIndex');
 Route::get('/tracer-answer-form', [TracerController::class, 'answerForm'])->name('user.tracerForm');
@@ -66,27 +69,21 @@ Route::get('/tracer-answer-form', [TracerController::class, 'answerForm'])->name
 Route::get('/profile', [ProfileController::class, 'index'])->name('user.profileIndex');
 Route::patch('/update-profile/{userID}', ['as' => 'user.updateProfile', 'uses' => 'App\Http\Controllers\ProfileController@updateProfile']);
 
-// Alumni Forms Routes
+// Alumni Exit Interview Forms Routes
 Route::get('/forms', [FormsController::class, 'index'])->name('user.formsIndex');
-Route::get('/exit-interview-page-1', [FormsController::class, 'exitP1'])->name('user.exitInterviewP1');
-Route::get('/exit-interview-page-2', [FormsController::class, 'exitP2'])->name('user.exitInterviewP2');
-Route::get('/exit-interview-page-3', [FormsController::class, 'exitP3'])->name('user.exitInterviewP3');
-Route::get('/exit-interview-page-4', [FormsController::class, 'exitP4'])->name('user.exitInterviewP4');
-Route::get('/exit-interview-page-5', [FormsController::class, 'exitP5'])->name('user.exitInterviewP5');
-
-// Alumni Personal Data Sheet Routes
-Route::get('/pds-page-1', [FormsController::class, 'pdsP1'])->name('user.pdsP1');
-Route::get('/pds-page-2', [FormsController::class, 'pdsP2'])->name('user.pdsP2');
-Route::patch('/answer-pds/page1', ['as' => 'user.updateProfile', 'uses' => 'App\Http\Controllers\ProfileController@updateProfile']);
+Route::get('/forms/exit-form', [FormsController::class, 'exitInteview'])->name('user.exitInterview');
+Route::post('/forms/exit-answer', [FormsController::class, 'exitAnswers'])->name('user.exitAnswers');
 
 // SAS Form Routes
-Route::get('/sas-page-1', [FormsController::class, 'sasP1'])->name('user.sasP1');
-Route::get('/sas-page-2', [FormsController::class, 'sasP2'])->name('user.sasP2');
-Route::get('/sas-page-3', [FormsController::class, 'sasP3'])->name('user.sasP3');
-Route::get('/sas-page-4', [FormsController::class, 'sasP4'])->name('user.sasP4');
-Route::get('/sas-page-5', [FormsController::class, 'sasP5'])->name('user.sasP5');
+Route::get('/forms/sas-form', [FormsController::class, 'sasForm'])->name('user.sasForm');
+Route::post('/forms/sas-answer', [FormsController::class, 'sasAnswer'])->name('user.sasAnswer');
 
-// PDS Input Answers
+// Personal Data Sheet Routes
+Route::get('/forms/pds-form', [FormsController::class, 'pdsForm'])->name('user.pdsForm');
+Route::post('/forms/pds-answer', [FormsController::class, 'pdsAnswer'])->name('user.pdsAnswer');
+
+// Data Privacy Notice
+Route::post('/data-privacy-notice', [FormsController::class, 'dataPrivacy'])->name('user.dataPrivacy');
 
 
 
