@@ -120,7 +120,7 @@ CREATE TABLE `career_applicants` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
+-- --
 -- Dumping data for table `career_applicants`
 --
 
@@ -283,7 +283,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (45, '2022_08_21_210331_create_exit_interview_table', 7),
 (46, '2022_08_21_224118_create_sas_form_table', 8);
 
--- --------------------------------------------------------
+-- -- --------------------------------------------------------
 
 --
 -- Table structure for table `pds`

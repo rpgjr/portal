@@ -64,6 +64,9 @@ Route::post('/career/apply', [CareerController::class, 'applyCareer'])->name('us
 // Alumni Tracer Routes
 Route::get('/tracer', [TracerController::class, 'index'])->name('user.tracerIndex');
 Route::get('/tracer-answer-form', [TracerController::class, 'answerForm'])->name('user.tracerForm');
+Route::post('/tracer-answers',[TracerController::class, 'tracerAnswer'])->name('user.tracerAnswer');
+Route::get('/tracer/update', [TracerController::class, 'updateTracer'])->name('user.updateTracer');
+Route::patch('/update-tracer/{tracerID}', ['as' => 'user.updateTracerForm', 'uses' => 'App\Http\Controllers\TracerController@update']);
 
 // Alumni Profile Routes
 Route::get('/profile', [ProfileController::class, 'index'])->name('user.profileIndex');

@@ -20,6 +20,23 @@ return new class extends Migration
             $table->string('lastName');
             $table->string('firstName');
             $table->string('middleName');
+            $table->string('courseID');
+            $table->string('number');
+            $table->string('email');
+            $table->date('ff_firstEmployment');
+            $table->date('cc_currentEmployment');
+            $table->string('cc_company');
+            $table->string('cc_typeOfWork');
+            $table->string('cc_position');
+            $table->string('cc_status');
+            $table->string('cc_income');
+            $table->string('relatedToCourse');
+            $table->string('cc_email');
+            $table->string('cc_number');
+            $table->string('ff_company');
+            $table->string('ff_position');
+            $table->string('ff_email');
+            $table->string('ff_number');
             $table->timestamps();
         });
     }
