@@ -46,6 +46,9 @@ Route::get('/admin', [AdminController::class, 'index'])->name('admin.index')->mi
 Route::get('/add-list-alumni', [AdminController::class, 'addListAlumni'])->name('admin.addList')->middleware('adminSession');
 Route::post('/add-alumni', [AdminController::class, 'addAlumni'])->name('admin.addAlumni')->middleware('adminSession');
 
+//Account Settings
+Route::get('/acc-setting', [AccountController::class, 'accSetting'])->name('user.accSetting');
+Route::patch('/account-setting/{userID}', ['as' => 'user.update', 'uses' => 'App\Http\Controllers\AccountController@update']);
 
 // Career Routes
 Route::get('/career', [CareerController::class, 'index'])->name('career.index');

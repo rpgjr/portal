@@ -82,6 +82,7 @@ class TracerController extends Controller
 
     }
 
+// Update Tracer: 
     public function updateTracer(){
         $userID = DB::table('tbl_alumni')->where('username', '=', Session()->get('loginID'))->first('userID')->userID;
         $answers = DB::table('tracer_form')->where('userID', '=', $userID)->get();
@@ -89,6 +90,7 @@ class TracerController extends Controller
         return view('tracer.update', compact('answers', 'courses'));
     }
 
+// Update Tracer: Input new value
     public function update(Request $request, $tracerID){
         $tracer = DB::table('tracer_form')->where('tracerID', '=', $tracerID)->update([
             'userID' => $request->input('userID'),

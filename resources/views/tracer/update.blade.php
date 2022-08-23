@@ -17,11 +17,11 @@
         </div>
     
     
-        <div class="row my-3 justify-content-center">
+        <div class="row justify-content-center">
             <div class="col-md-9">
                 {!! Form::model($answer, [ 'method' => 'patch','route' => ['user.updateTracerForm', $answer->tracerID] ]) !!}
                     @csrf
-                    <div class="row box-tracer">
+                    <div class="row box-profile align-items-center">
                         <div class="col-md-12 my-4">
                             <center>
                                 <h3>Information Sheet</h3>

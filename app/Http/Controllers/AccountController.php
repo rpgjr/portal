@@ -8,6 +8,8 @@ use App\Models\AlumniList;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Auth\Events\Registered;
+use DB;
+use Auth;
 
 class AccountController extends Controller
 {
@@ -131,5 +133,43 @@ class AccountController extends Controller
             return redirect('/');
         }
     }
+
+    public function accSetting(){
+        $userID = DB::table('tbl_alumni')->where('username', '=', Session()->get('loginID'))->get();
+        return view('setting.index',compact('userID'));
+    }
+
+    public function update(Request $request, $userID){
+
+        if(!empty($request->username)){
+            if($request->username != Session()->get('loginID')){
+
+            $request->validate([
+                'username' => 'unique:tbl_alumni',
+            ]);
+
+            $user = DB::table('tbl_alumni')->where('userID', '=', $userID)->update([
+                'username' => $request->input('username'),
+            ]);
+            
+            }
+
+        }
+
+        if(!empty($request->password)){
+            $request->validate([
+                'password' => 'confirmed|min:8',
+            ]);
+            $newPassword = Hash::make($request->input('password'));
+            $user = DB::table('tbl_alumni')->where('userID', '=', $userID)->update([
+            'password' => $newPassword,
+        ]);
+
+        }
+
+        return redirect(route('homepage'));
+
+    }
+
 
 }
