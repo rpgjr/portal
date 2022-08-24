@@ -2,6 +2,7 @@
 
 @section('page-title', 'Alumni Tracer')
 @section('tracer-active', 'active')
+
 @section('content')
 
     <div class="container my-5">
@@ -10,13 +11,8 @@
                 <h3>Alumni Tracer</h3>
             </div>
             <div class="col-md-6">
-                @if(!$answers -> count())
                 <a href="{{ route('user.tracerForm') }}" type="button" class="btn btn-primary float-end">Answer Alumni Tracer</a>
-                @else
-                <a href="{{ route('user.updateTracer') }}" type="button" class="btn btn-primary float-end">Update Alumni Tracer</a>
-                @endif
             </div>
-
         </div>
 
         <div class="row my-3 mx-5 box-tracer">
@@ -28,75 +24,75 @@
                         <th scope="col">Answers</th>
                       </tr>
                     </thead>
-
-                    @foreach($answers as $answer)
                     <tbody>
                         <tr>
                             <td>Contact Number</td>
-                            <td>{{$answer->number}}</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Email Address</td>
-                            <td>{{$answer->email}}</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Date of Graduation</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Date of 1st Employment</td>
-                            <td>{{$answer->ff_firstEmployment}}</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Date of Current Employment</td>
-                            <td>{{$answer->cc_currentEmployment}}</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Current Nature/Type of Work</td>
-                            <td>{{$answer->cc_typeOfWork}}</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Current Plantilla Item/Work Position</td>
-                            <td>{{$answer->cc_position}}</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Current Status of Employment</td>
-                            <td>{{$answer->cc_status}}</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Current Monthly Income</td>
-                            <td>{{$answer->cc_income}}</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Is your job/work related to your undergraduate program?</td>
-                            <td>{{$answer->relatedToCourse}}</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Present Company Email Address</td>
-                            <td>{{$answer->cc_email}}</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Present Company Contact Number</td>
-                            <td>{{$answer->cc_number}}</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>First Job/Title/Position</td>
-                            <td>{{$answer->ff_position}}</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Company name (First Job)</td>
-                            <td>{{$answer->ff_email}}</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Company Email Address (First Job)</td>
-                            <td>{{$answer->ff_email}}</td>
+                            <td></td>
                         </tr>
                         <tr>
                             <td>Company Contact Number (First Job)</td>
-                            <td>{{$answer->ff_number}}</td>
+                            <td></td>
                         </tr>
                     </tbody>
-                    @endforeach
                 </table>
             </div>
         </div>
     </div>
 
 @endsection
-

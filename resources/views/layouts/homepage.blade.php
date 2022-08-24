@@ -43,7 +43,7 @@
                         <i class="fa-solid fa-circle-user"></i>  {{ Session::get('loginID') }}
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item @yield('setting-active')" aria-current="page" href="{{ route('user.accSetting') }}">Account Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Account Settings</a></li>
                         <li><a class="dropdown-item" href="#">Feedback</a></li>
                         <li><a class="dropdown-item" href="#">Report a Problem</a></li>
                         <li><hr class="dropdown-divider"></li>

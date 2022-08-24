@@ -5,7 +5,6 @@
 
 @section('content')
 
-@foreach ($account as $user)
     <div class="container my-3">
         <div class="row my-5">
             <div class="col-md-6">
@@ -15,11 +14,10 @@
                 <a href="{{ route('user.tracerIndex') }}" type="button" class="btn btn-primary float-end">Return</a>
             </div>
         </div>
-    
-    
+
         <div class="row my-3 justify-content-center">
-            <div class="col-md-9">
-                <form method="post" action="{{ route('user.tracerAnswer') }}">
+            <div class="col-md-8">
+                <form>
                     @csrf
                     <div class="row box-tracer">
                         <div class="col-md-12 my-4">
@@ -27,38 +25,33 @@
                                 <h3>Information Sheet</h3>
                             </center>
                         </div>
-                        <input type="hidden" name="userID" value="{{ $user->userID}}">
                         <div class="col-md-4 my-2">
                             <label class="form-label">Last Name</label>
-                            <input type="text" class="form-control" name="lastName" value="{{ $user->lastName }}">
+                            <input type="text" class="form-control">
                         </div>
                         <div class="col-md-4 my-2">
                             <label class="form-label">First Name</label>
-                            <input type="text" class="form-control" name="firstName" value="{{ $user->firstName }}">
+                            <input type="text" class="form-control">
                         </div>
                         <div class="col-md-4 my-2">
                             <label class="form-label">Middle Name</label>
-                            <input type="text" class="form-control" name="middleName" value="{{ $user->middleName }}">
+                            <input type="text" class="form-control">
                         </div>
                         <div class="col-md-4 my-2">
                             <label class="form-label">Course</label>
-                            <select class="form-select" name="courseID">
-                                @foreach ($courses as $course)
-                                    <option value="{{ $course->courseID }}"
-                                        @if (($course->courseID) == $user->courseID)
-                                            selected
-                                        @endif
-                                        >{{ $course->courseID }}</option>
-                                @endforeach
+                            <select class="form-select">
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
                             </select>
                         </div>
                         <div class="col-md-4 my-2">
                             <label class="form-label">Contact Number</label>
-                            <input type="text" class="form-control" name="number" value="{{ $user->number }}">
+                            <input type="text" class="form-control">
                         </div>
                         <div class="col-md-4 my-2">
                             <label class="form-label">Email</label>
-                            <input type="text" class="form-control" name="email" value="{{ $user->email }}">
+                            <input type="text" class="form-control">
                         </div>
                         <div class="col-md-12 my-4">
                             <center>
@@ -67,70 +60,66 @@
                         </div>
                         <div class="col-md-12 my-2">
                             <label class="form-label">Date of First Employment:</label>
-                            <input type="date" class="form-control" name="ff_firstEmployment">
+                            <input type="date" class="form-control">
                         </div>
                         <div class="col-md-12 my-2">
                             <label class="form-label">Date of Current Employment:</label>
-                            <input type="date" class="form-control" name="cc_currentEmployment">
-                        </div>
-                        <div class="col-md-12 my-2">
-                            <label class="form-label">Current Company name:</label>
-                            <input type="text" class="form-control" name="cc_company">
+                            <input type="date" class="form-control">
                         </div>
                         <div class="col-md-12 my-2">
                             <label class="form-label">Current Nature/Type of Work:</label>
-                            <input type="text" class="form-control" name="cc_typeOfWork">
+                            <input type="text" class="form-control">
                         </div>
                         <div class="col-md-12 my-2">
                             <label class="form-label">Current Plantilla Item/Work Position:</label>
-                            <input type="text" class="form-control" name="cc_position">
+                            <input type="text" class="form-control">
                         </div>
                         <div class="col-md-12 my-2">
                             <label class="form-label">Current Status of Employment:</label>
-                            <input type="text" class="form-control" name="cc_status">
+                            <input type="text" class="form-control">
                         </div>
                         <div class="col-md-12 my-2">
                             <label class="form-label">Current Monthly Income:</label>
-                            <input type="text" class="form-control" name="cc_income">
+                            <input type="text" class="form-control">
                         </div>
                         <div class="col-md-12 my-2">
                             <label class="form-label">Is your job/work related to your undergraduate program?</label>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="relatedToCourse" value="Yes">
-                                <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <label class="form-check-label" for="flexRadioDefault1">
                                  Yes
                                 </label>
                               </div>
                               <div class="form-check">
-                                <input class="form-check-input" type="radio" name="relatedToCourse" value="No">
-                                <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                                <label class="form-check-label" for="flexRadioDefault2">
                                  No
                                 </label>
                             </div>
                         </div>
                         <div class="col-md-12 my-2">
-                            <label class="form-label">Current Company Email Address:</label>
-                            <input type="text" class="form-control" name="cc_email">
+                            <label class="form-label">Present Company Email Address:</label>
+                            <input type="text" class="form-control">
                         </div>
                         <div class="col-md-12 my-2">
-                            <label class="form-label">Current Company Contact Number:</label>
-                            <input type="text" class="form-control" name="cc_number">
-                        </div>
-                        <div class="col-md-12 my-2">
-                            <label class="form-label">Company name (First Job):</label>
-                            <input type="text" class="form-control" name="ff_company">
+                            <label class="form-label">Present Company Contact Number:</label>
+                            <input type="text" class="form-control">
                         </div>
                         <div class="col-md-12 my-2">
                             <label class="form-label">First Job/Title/Position:</label>
-                            <input type="text" class="form-control" name="ff_position">
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="col-md-12 my-2">
+                            <label class="form-label">Company name (First Job):</label>
+                            <input type="text" class="form-control">
                         </div>
                         <div class="col-md-12 my-2">
                             <label class="form-label">Company Email Address (First Job):</label>
-                            <input type="text" class="form-control" name="ff_email">
+                            <input type="text" class="form-control">
                         </div>
                         <div class="col-md-12 my-2">
                             <label class="form-label">Company Contact Number (First Job):</label>
-                            <input type="text" class="form-control" name="ff_number">
+                            <input type="text" class="form-control">
                         </div>
                         <div class="col-md-12 mt-3 text-center">
                             <button type="submit" class="btn btn-primary" style="width: 150px">Submit</button>
@@ -139,7 +128,6 @@
                 </form>
             </div>
         </div>
-
     </div>
-@endforeach
+
 @endsection

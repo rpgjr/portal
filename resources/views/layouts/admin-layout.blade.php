@@ -175,51 +175,11 @@
                                     <span>Career Requests</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="{{ route('admin.viewApplicants') }}" class="nav-link px-3 @yield('admin.careerApplicants')">
-                                    <span class="me-2">
-                                        <i class="fa-solid fa-list"></i>
-                                    </span>
-                                    <span>List of Job Applicants</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                {{-- Forms --}}
-                    <hr>
-                    <a class="nav-link px-3 @yield('forms-status')" data-bs-toggle="collapse" href="#forms">
-                        <i class="fa-solid fa-file"></i>
-                        <span>Forms</span>
-                        <span class="ms-auto">
-                            <span class="right-icon">
-                                <i class="fa-solid fa-caret-down"></i>
-                            </span>
-                        </span>
-                    </a>
-                    <div class="collapse @yield('forms-collapse')" id="forms">
-                        <ul class="navbar-nav ps-3">
-                            <li>
-                                <a href="{{ route('admin.monitorForms') }}" class="nav-link px-3 @yield('monitor-forms-status')">
-                                    <span class="me-2">
-                                        <i class="fa-solid fa-eye"></i>
-                                    </span>
-                                    <span>Monitor Forms</span>
-                                </a>
-                            </li>
-                            <li>
-                                @include('career.add-modal')
-                                <a class="nav-link px-3 @yield('')" data-bs-toggle="modal" data-bs-target="#addCareer">
-                                    <span class="me-2">
-                                        <i class="fa-solid fa-envelope"></i>
-                                    </span>
-                                    <span>Send Notification</span>
-                                </a>
-                            </li>
                         </ul>
                     </div>
                 {{-- News and Events --}}
                     <hr>
-                    <a class="nav-link px-3 @yield('news-status')" data-bs-toggle="collapse" href="#news">
+                    <a class="nav-link px-3 @yield('forms-status')" data-bs-toggle="collapse" href="#news">
                         <i class="fa-solid fa-newspaper"></i>
                         <span>News and Events</span>
                         <span class="ms-auto">
@@ -228,7 +188,7 @@
                             </span>
                         </span>
                     </a>
-                    <div class="collapse @yield('news-collapse')" id="news">
+                    <div class="collapse @yield('forms-collapse')" id="news">
                         <ul class="navbar-nav ps-3">
                             <li>
                                 <a href="" class="nav-link px-3 @yield('')">

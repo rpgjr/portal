@@ -7,25 +7,44 @@ body {
 
 /* index-css */
 .greetings {
-	background: url('../../img/pupBG2.jpg') no-repeat center center fixed;
-	background-size: cover;
-	height: 100%;
-	color: #ffffff;
+	background: url('../../img/pup-bg.png') no-repeat center center fixed;
+	background-size:cover;
+    height: 100%;
+	color: #000000;
 }
 
-.glassBG {
+/* .glassBG {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 	background-color: rgba(255, 255, 255, .15);
 	backdrop-filter: blur(10px);
 	border-radius: 20px;
-	padding: 40px;
-}
+	padding: 20px;
+} */
 
 .container-greetings {
+    margin: 70px;
     width: 1200px;
 }
 
-.form-section img, .career-section img, .donation-section img{
+.container-greetings h1 {
+    font-size: 4.5em;
+    font-weight: bold;
+}
+
+.form-section h2, .career-section h2 {
+    font-weight: bold;
+}
+
+/* .carousel-inner > .item >img, .carousel-inner > .item > a > img {
+    wi
+} */
+
+.carousel-img img {
+    height: 300px;
+    width: 500px;
+}
+
+.form-section img, .career-section img, .donation-section img, .section-tracer img{
     height: 300px;
     border-radius: 10px;
 }
@@ -136,11 +155,9 @@ body {
 }
 
 .homepage-footer {
-    margin-top: 100px;
-    background-color: #78281F;
+    background-color: #374785;
     color: #ffffff;
-    padding: 6px;
-}
+} 
 
 .account-name {
     color: #000000;
