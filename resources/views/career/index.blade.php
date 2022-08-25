@@ -52,7 +52,22 @@
                                         <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $job->careerID }}">Delete</button>
                                         @include('career.action')
                                     @else
-                                        <button type="button" class="btn btn-primary">Apply</button>
+                                        @php $count = 0; @endphp
+                                        @foreach ($applicant as $application)
+                                            @if (($application->careerID) == ($job->careerID))
+                                                @php $count++; @endphp
+                                            @endif
+                                        @endforeach
+
+                                        @if ($count != 1)
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#appliedModal{{ $job->careerID }}">Apply</button>
+                                            @include('career.action')
+
+                                        @else
+                                            <button type="button" class="btn btn-primary disabled" data-bs-toggle="modal" data-bs-target="#appliedModal{{ $job->careerID }}">Already Applied</button>
+                                        @endif
+
+
                                     @endif
                                 </div>
                             </div>

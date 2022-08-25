@@ -23,32 +23,62 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th class="align-middle">Exit Interview</th>
-                        <td class="align-middle">Unanswered</td>
-                        <td>
-                            <a href="{{ route('user.exitInterviewP1') }}" type="button" class="btn btn-primary">Answer</a>
-                            <button type="button" class="btn btn-success">Print</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="align-middle">SAS Form</th>
-                        <td class="align-middle">Unanswered</td>
-                        <td>
-                            <a href="{{ route('user.sasP1') }}" type="button" class="btn btn-primary">Answer</a>
-                            <button type="button" class="btn btn-success">Print</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="align-middle">Personal Data Sheet</th>
-                        <td class="align-middle">Unanswered</td>
-                        <td>
-                            <a href="{{ route('user.pdsP1') }}" type="button" class="btn btn-primary">Answer</a>
-                            <button type="button" class="btn btn-success">Print</button>
-                        </td>
-                      </tr>
+                        <tr>
+                            <th class="align-middle">Exit Interview</th>
+                            <td class="align-middle">
+                                @if (!$exit->count())
+                                    Not yet completed <i class="fa-solid fa-circle-exclamation" style="color: #E74C3C;"></i>
+                                @else
+                                    Completed <i class="fa-solid fa-circle-check" style="color: #27AE60;"></i>
+                                @endif
+                            </td>
+                            <td>
+                                @if (!$exit->count())
+                                    <a href="{{ route('user.exitInterview') }}" type="button" class="btn btn-primary">Answer</a>
+                                @else
+                                    ---
+                                    {{-- <button class="btn btn-success" type="button">Print Form</button> --}}
+                                @endif
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle">SAS Form</th>
+                            <td class="align-middle">
+                                @if (!$sas->count())
+                                    Not yet completed <i class="fa-solid fa-circle-exclamation" style="color: #E74C3C;"></i>
+                                @else
+                                    Completed <i class="fa-solid fa-circle-check" style="color: #27AE60;"></i>
+                                @endif
+                            </td>
+                            <td>
+                                @if (!$sas->count())
+                                    <a href="{{ route('user.sasForm') }}" type="button" class="btn btn-primary">Answer</a>
+                                @else
+                                    ---
+                                    {{-- <button class="btn btn-success" type="button">Print Form</button> --}}
+                                @endif
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle">Personal Data Sheet</th>
+                            <td class="align-middle">
+                                @if (!$pds->count())
+                                    Not yet completed <i class="fa-solid fa-circle-exclamation" style="color: #E74C3C;"></i>
+                                @else
+                                    Completed <i class="fa-solid fa-circle-check" style="color: #27AE60;"></i>
+                                @endif
+                            </td>
+                            <td>
+                                @if (!$pds->count())
+                                    <a href="{{ route('user.pdsForm') }}" type="button" class="btn btn-primary">Answer</a>
+                                @else
+                                    ---
+                                    {{-- <button class="btn btn-success" type="button">Print Form</button> --}}
+                                @endif
+                            </td>
+                        </tr>
                     </tbody>
-                  </table>
+                </table>
             </div>
         </div>
     </div>
