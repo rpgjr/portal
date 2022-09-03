@@ -32,7 +32,7 @@
 
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#approveModal{{ $job->careerID }}">Approve</button>
                                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $job->careerID }}">Delete</button>
-                                    @include('career.action')
+                                    @include('admin-career.approve')
 
                                 </div>
                             </div>
