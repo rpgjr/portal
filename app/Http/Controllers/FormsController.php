@@ -528,6 +528,6 @@ class FormsController extends Controller
         $exit = ExitInterview::all();
         $sas = SASForm::all();
         $account = Alumni::all();
-        return view('admin-forms.monitorForms', compact('pds', 'exit', 'sas', 'account'));
+        return view('admin-forms.monitorForms', compact(['pds', 'exit', 'sas', 'account']));
     }
 }

@@ -208,7 +208,7 @@
                             </li>
                             <li>
                                 @include('career.add-modal')
-                                <a class="nav-link px-3 @yield('')" data-bs-toggle="modal" data-bs-target="#addCareer">
+                                <a class="nav-link px-3 @yield('')">
                                     <span class="me-2">
                                         <i class="fa-solid fa-envelope"></i>
                                     </span>
